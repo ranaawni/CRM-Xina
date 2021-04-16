@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const Admins = new mongoose.Schema({
+const Admin = new mongoose.Schema({
   fullName: {
     type: String,
     required: true,
   },
 
-  username: {
+  userName: {
     type: String,
     required: true,
     unique: true,
@@ -16,6 +16,13 @@ const Admins = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  createdOrder: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Order",
+    },
+  ],
 });
 
-module.exports = mongoose.model("Admins", Admins);
+module.exports = mongoose.model("Admin", Admin);

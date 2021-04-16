@@ -1,15 +1,23 @@
 const mongoose = require("mongoose");
+const admins = require("./admins");
 
-const Orders = new mongoose.Schema({
-  customerName: {
-    type: String,
-    required: true,
-  },
+const Order = new mongoose.Schema({
+  customerName: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Admin",
+    },
+  ],
 
   service: {
     type: String,
     required: true,
   },
+
+  date: {
+    type: Date,
+    required: true,
+  },
 });
 
-module.exports = mongoose.model("Orders", Orders);
+module.exports = mongoose.model("Order", Order);
