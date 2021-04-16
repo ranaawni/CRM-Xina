@@ -67,6 +67,23 @@ module.exports = {
     }
   },
 
+  //edit order
+  editOrder: async (args, req) => {
+    if (!req.isAuth) {
+      throw new Error("Unauthenticated");
+    }
+    try {
+      const id = await args.orderId;
+      console.log(id, "updaaate");
+      return Order.findByIdAndUpdate(id, args);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        error: err,
+      });
+    }
+  },
+
   //delete order
   deleteOrder: async (args, req) => {
     //make deleteOrder protected

@@ -46,6 +46,7 @@ input adminInput {
      createAdmin(adminInput : adminInput): admin
      deleteOrder(orderId: ID!): order!
      editOrder(orderId: ID!, service: String): order
+     editAdmin(adminId: ID!, fullName: String, userName: String): admin
 
 
  }

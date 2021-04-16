@@ -8,9 +8,9 @@ const { orders, transformOrder, user } = require("./helperResolver");
 module.exports = {
   //admin resolver to get what we need from admin
   admins: async (args, req) => {
-      //make admins resolver protected
-      if (!req.isAuth){
-        throw new Error('Unauthenticated!')
+    //make admins resolver protected
+    if (!req.isAuth) {
+      throw new Error("Unauthenticated!");
     }
     try {
       const admins = await Admin.find();
@@ -77,5 +77,22 @@ module.exports = {
       }
     );
     return { adminId: admin.id, token: token, tokenExpiration: 1 };
+  },
+
+  //edit admin
+  editAdmin: async (args, req) => {
+    if (!req.isAuth) {
+      throw new Error("Unauthenticated");
+    }
+    try {
+      const id = await args.adminId;
+      console.log(id, "updaaate");
+      return Admin.findByIdAndUpdate(id, args);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        error: err,
+      });
+    }
   },
 };
