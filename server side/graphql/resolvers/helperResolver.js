@@ -12,6 +12,11 @@ const transformOrder = (order) => {
 const orders = async (orderIds) => {
   try {
     const orders = await Order.find({ _id: { $in: orderIds } });
+    orders.sort((a, b) => {
+      return (
+        orderIds.indexOf(a._id.toString()) - orderIds.indexOf(b._id.toString())
+      );
+    });
     return orders.map((order) => {
       return transformOrder(order);
     });

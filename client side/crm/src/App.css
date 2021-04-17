@@ -1,0 +1,171 @@
+.main-content {
+  margin: 7rem 2.5rem;
+}
+
+.auth-form {
+  width: 25rem;
+  max-width: 80%;
+  margin: 5rem auto;
+}
+
+.form-control label,
+.form-control input {
+  width: 100%;
+  display: block;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-control label {
+  margin-bottom: 0.5rem;
+}
+
+.form-actions button,
+.btn {
+  background-color: rgb(131, 130, 130);
+  border: 1px solid rgb(83, 83, 83);
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
+  margin-right: 1rem;
+  box-shadow: 1px 1px 5px rgb(73, 73, 73);
+  color: white;
+  cursor: pointer;
+}
+
+.form-actions a {
+  background-color: rgb(131, 130, 130);
+  border: 1px solid rgb(83, 83, 83);
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
+  margin-right: 1rem;
+  box-shadow: 1px 1px 5px rgb(73, 73, 73);
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form-actions button:hover,
+.form-actions button:active,
+.btn:hover,
+.btn:active {
+  background-color: rgb(155, 155, 155);
+  border-color: rgb(155, 155, 155);
+}
+
+.form-actions a:hover,
+.form-actions a:active {
+  background-color: rgb(155, 155, 155);
+  border-color: rgb(155, 155, 155);
+}
+
+/* order page */
+
+.orders-control {
+  text-align: center;
+}
+
+/* order List */
+
+.orders__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 40rem;
+  max-width: 90%;
+}
+
+.orders__item {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #5101d1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delbtn {
+  background-color: rgb(131, 130, 130);
+  border: 1px solid rgb(83, 83, 83);
+  border-radius: 5px;
+  margin-left: 20rem;
+  right: 1rem;
+  display: flex;
+  box-shadow: 1px 1px 5px rgb(73, 73, 73);
+  color: white;
+  cursor: pointer;
+}
+.editbtn {
+  background-color: rgb(131, 130, 130);
+  border: 1px solid rgb(83, 83, 83);
+  border-radius: 5px;
+  display: inline;
+  box-shadow: 1px 1px 5px rgb(73, 73, 73);
+  color: white;
+  cursor: pointer;
+}
+
+/* modal for list order */
+
+.modal {
+  width: 90%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  position: fixed;
+  top: 20vh;
+  left: 5%;
+  z-index: 100;
+}
+
+.modal__header {
+  padding: 1rem;
+  background: #5101d1;
+  color: white;
+}
+
+.modal__header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.modal__content {
+  padding: 1rem;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 30rem;
+    left: calc((100% - 30rem) / 2);
+  }
+}
+
+.order__list-item {
+  width: 40rem;
+  max-width: 90%;
+  margin: 2rem auto;
+  list-style: none;
+  padding: 0;
+}
+
+.order__list-item {
+  margin: 1rem 0;
+  border: 1px solid rgb(36, 36, 36);
+  padding: 1rem;
+}
+
+/* for back add order */
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+}

@@ -38,6 +38,7 @@ input adminInput {
      orders: [order!]!
      admins:[admin!]!
      login(userName: String!, password: String!): authUser
+     adminOne(adminId: ID!): admin
 
  }
 

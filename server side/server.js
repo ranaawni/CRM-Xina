@@ -3,8 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const { graphqlHTTP } = require("express-graphql");
 const mongoose = require("mongoose");
-const isAuth = require("./middleware/isAuth")
-
+const isAuth = require("./middleware/isAuth");
 
 const graphQlSchema = require("./graphql/schema/index");
 const graphQlResolvers = require("./graphql/resolvers/index");
@@ -18,6 +17,16 @@ app.use(express.json());
 
 app.use(isAuth);
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methodss", "POST,GET,OPTIONS,UPDATE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 // app.use(isAuth);
 app.use(
   "/graphql",
@@ -26,6 +35,7 @@ app.use(
     rootValue: graphQlResolvers,
     graphiql: true,
   })
+  
 );
 
 //connect with database
